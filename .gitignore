@@ -1,0 +1,8 @@
+# 含token/敏感文件
+scripts/
+run_cb_*.sh
+sync_to_github.sh
+*.sh
+logs/
+*.log
+memory_backups/
