@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "jobs": [
+    {
+      "id": "1343f7e8-0012-46eb-b8da-d064d97139ce",
+      "agentId": "main",
+      "sessionKey": "agent:main:main",
+      "name": "OpenClaw 凌晨更新检查",
+      "enabled": true,
+      "createdAtMs": 1778225617616,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 2 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "## 任务：OpenClaw 凌晨更新检查\n\n### 背景\n每天凌晨自动检查 OpenClaw 更新，验证更新结果，失败时回滚并推送钉钉通知。\n\n### 步骤\n\n**Step 1: 记录当前版本**\n```bash\nCURRENT_VERSION=$(npm view openclaw version)\necho \"当前版本: $CURRENT_VERSION\"\n```\n\n**Step 2: 检查更新状态**\n```bash\nopenclaw update status --json\n```\n- 如果输出显示 \"update available\" 且有新版本，继续执行 Step 3\n- 如果已经是最新版本，输出 \"已是最新版本，无需更新\"，任务结束\n\n**Step 3: 执行更新**\n```bash\nopenclaw update --yes --json --no-restart 2>&1\n```\n- 捕获退出码\n\n**Step 4: 验证更新结果 — 运行 doctor**\n```bash\nopenclaw doctor --json 2>&1\n```\n- 检查 doctor 输出是否包含 success/正常 关键词\n- 检查退出码是否为 0\n\n**Step 5: 判断结果**\n\n✅ **更新成功且 doctor 正常**:\n- 输出 \"更新成功，无问题\"\n- 任务完成，**不发送任何通知**\n\n❌ **更新失败或 doctor 异常**:\n1. 输出 \"更新失败，开始回滚...\"\n2. 执行回滚:\n```bash\necho \"回滚到版本: $CURRENT_VERSION\"\nnpm i -g openclaw@$CURRENT_VERSION --json 2>&1\nopenclaw gateway restart\n```\n3. 等待几秒后验证:\n```bash\nsleep 5\nopenclaw doctor --json 2>&1\n```\n4. 发送钉钉通知（使用 dws 或直接 curl）:\n\n**直接 curl 发送钉钉 Webhook（已验证可用）**:\n```bash\nDINGTALK_WEBHOOK=\"https://oapi.dingtalk.com/robot/send?access_token=82229bd3340908b815989af583820aa5dd5d5598673f9469f55bc3c78d46c488\"\nTIMESTAMP=$(date '+%Y-%m-%d %H:%M:%S')\npayload=$(cat <<EOF\n{\n  \"msgtype\": \"markdown\",\n  \"markdown\": {\n    \"title\": \"⚠️ OpenClaw 更新失败已回滚\",\n    \"text\": \"## ⚠️ OpenClaw 自动更新失败\\n\\n**时间**: ${TIMESTAMP}\\n**当前版本**: ${CURRENT_VERSION}\\n**状态**: 已自动回滚\\n\\n请人工检查 gateway 状态。\"\n  }\n}\nEOF\n)\ncurl -s -X POST \"$DINGTALK_WEBHOOK\" \\\n  -H 'Content-Type: application/json' \\\n  -d \"$payload\" 2>&1\n```\n\n### 重要原则\n- 成功时**绝对不要**发送钉钉通知\n- 只有失败+回滚完成后才发送通知\n- 回滚命令中 npm i 需要正确引用之前保存的 CURRENT_VERSION 变量",
+        "timeoutSeconds": 600
+      },
+      "delivery": {
+        "mode": "announce"
+      },
+      "state": {}
+    }
+  ]
+}

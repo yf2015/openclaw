@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "jobs": {
+    "1343f7e8-0012-46eb-b8da-d064d97139ce": {
+      "updatedAtMs": 1778225617616,
+      "scheduleIdentity": "{\"version\":1,\"enabled\":true,\"schedule\":{\"kind\":\"cron\",\"expr\":\"0 2 * * *\",\"tz\":\"Asia/Shanghai\"}}",
+      "state": {
+        "nextRunAtMs": 1778263200000
+      }
+    }
+  }
+}
