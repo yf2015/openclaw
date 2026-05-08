@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "profiles": {
+    "minimax-portal:default": {
+      "type": "oauth",
+      "provider": "minimax-portal",
+      "access": "[REDACTED]",
+      "refresh": "dfrt-HfQzq2zyhUuPoDMKz8i_tGGBmSU2OecLom53MINTYNc",
+      "expires": 1778213374772
+    }
+  }
+}

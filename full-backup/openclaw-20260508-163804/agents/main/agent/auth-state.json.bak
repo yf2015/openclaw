@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "lastGood": {
+    "minimax-portal": "minimax-portal:default"
+  },
+  "usageStats": {
+    "minimax-portal:default": {
+      "errorCount": 0,
+      "lastUsed": 1778143713834,
+      "lastFailureAt": 1776762288584
+    }
+  }
+}

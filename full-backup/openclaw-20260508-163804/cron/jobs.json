@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "jobs": [
+    {
+      "id": "1343f7e8-0012-46eb-b8da-d064d97139ce",
+      "agentId": "main",
+      "sessionKey": "agent:main:main",
+      "name": "OpenClaw 凌晨更新检查",
+      "enabled": true,
+      "createdAtMs": 1778225617616,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 2 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "[REDACTED]",
+        "timeoutSeconds": 600
+      },
+      "delivery": {
+        "mode": "announce"
+      },
+      "state": {}
+    }
+  ]
+}
