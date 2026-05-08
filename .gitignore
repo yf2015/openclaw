@@ -1,3 +1,9 @@
-# 备份文件
+# 只排除 .bak 文件（原始凭证备份）
 *.bak
 *.bak.*
+
+# 排除 full-backup 内的冗余内容（已有独立备份）
+full-backup/*/memory/
+full-backup/*/workspace/memory_backups/
+full-backup/*/workspace/logs/
+full-backup/*/workspace/.git/
