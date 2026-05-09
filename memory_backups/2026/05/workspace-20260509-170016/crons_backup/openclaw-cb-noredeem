@@ -1,0 +1,23 @@
+# B型不强赎策略 - A股交易日 9:15~14:45 整点半点推送
+15 9 * * 1-5 root /bin/bash /root/.openclaw/workspace/run_cb_noredeem.sh >> /root/.openclaw/workspace/logs/cb_noredeem_cron.log 2>&1
+45 9 * * 1-5 root /bin/bash /root/.openclaw/workspace/run_cb_noredeem.sh >> /root/.openclaw/workspace/logs/cb_noredeem_cron.log 2>&1
+15 10 * * 1-5 root /bin/bash /root/.openclaw/workspace/run_cb_noredeem.sh >> /root/.openclaw/workspace/logs/cb_noredeem_cron.log 2>&1
+45 10 * * 1-5 root /bin/bash /root/.openclaw/workspace/run_cb_noredeem.sh >> /root/.openclaw/workspace/logs/cb_noredeem_cron.log 2>&1
+15 11 * * 1-5 root /bin/bash /root/.openclaw/workspace/run_cb_noredeem.sh >> /root/.openclaw/workspace/logs/cb_noredeem_cron.log 2>&1
+15 13 * * 1-5 root /bin/bash /root/.openclaw/workspace/run_cb_noredeem.sh >> /root/.openclaw/workspace/logs/cb_noredeem_cron.log 2>&1
+45 13 * * 1-5 root /bin/bash /root/.openclaw/workspace/run_cb_noredeem.sh >> /root/.openclaw/workspace/logs/cb_noredeem_cron.log 2>&1
+15 14 * * 1-5 root /bin/bash /root/.openclaw/workspace/run_cb_noredeem.sh >> /root/.openclaw/workspace/logs/cb_noredeem_cron.log 2>&1
+45 14 * * 1-5 root /bin/bash /root/.openclaw/workspace/run_cb_noredeem.sh >> /root/.openclaw/workspace/logs/cb_noredeem_cron.log 2>&1
+
+# 集思录投资日历 - 交易日 9:00 + 16:30
+0 9 * * 1-5 root /bin/bash /root/.openclaw/workspace/run_jisilu_calendar.sh >> /root/.openclaw/workspace/logs/jisilu_calendar_cron.log 2>&1
+30 16 * * 1-5 root /bin/bash /root/.openclaw/workspace/run_jisilu_calendar.sh >> /root/.openclaw/workspace/logs/jisilu_calendar_cron.log 2>&1
+
+# 提前赎回公告 - 交易日 9:00 + 23:30
+0 9 * * 1-5 root /bin/bash /root/.openclaw/workspace/run_jisilu_redeem_announce.sh >> /root/.openclaw/workspace/logs/jisilu_redeem_announce_cron.log 2>&1
+30 23 * * 1-5 root /bin/bash /root/.openclaw/workspace/run_jisilu_redeem_announce.sh >> /root/.openclaw/workspace/logs/jisilu_redeem_announce_cron.log 2>&1
+
+# GitHub 备份 - 每天 23:00
+0 23 * * * root /bin/bash /root/.openclaw/workspace/sync_to_github.sh >> /root/.openclaw/workspace/logs/sync_cron.log 2>&1
+# 每周日志轮转 - 周日 00:00
+0 0 * * 0 root bash /root/.openclaw/workspace/scripts/rotate_logs.sh >> /root/.openclaw/workspace/logs/rotate_cron.log 2>&1
