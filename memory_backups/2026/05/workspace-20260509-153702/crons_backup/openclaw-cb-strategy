@@ -1,2 +1,0 @@
-# 可转债策略每周一 03:00 执行
-0 3 * * 1 root /bin/bash /root/.openclaw/workspace/run_cb_strategy.sh >> /root/.openclaw/workspace/logs/cb_strategy_cron.log 2>&1
