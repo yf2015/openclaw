@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "skills": {
+    "file-browser": {
+      "version": "1.0.0",
+      "installedAt": 1776679809013
+    },
+    "find-skills": {
+      "version": "0.1.0",
+      "installedAt": 1776680552829
+    },
+    "word-docx": {
+      "version": "1.0.2",
+      "installedAt": 1776680634979
+    },
+    "excel-xlsx": {
+      "version": "1.0.2",
+      "installedAt": 1776680643514
+    },
+    "web-tools-guide": {
+      "version": "1.0.2",
+      "installedAt": 1776680653115
+    },
+    "stock-analysis": {
+      "version": "6.2.0",
+      "installedAt": 1776680659847
+    },
+    "self-improving": {
+      "version": "1.2.16",
+      "installedAt": 1776680794702
+    },
+    "ontology": {
+      "version": "0.1.2",
+      "installedAt": 1776680807938
+    },
+    "agent-memory": {
+      "version": "1.0.0",
+      "installedAt": 1776680824633
+    },
+    "cross-device-sync": {
+      "version": "1.0.0",
+      "installedAt": 1776680902968
+    },
+    "code-reviewer-pro": {
+      "version": "2.3.5",
+      "installedAt": 1776754746554
+    },
+    "stock-price-query": {
+      "version": "1.2.1",
+      "installedAt": 1778137484378
+    },
+    "finance-news-brief": {
+      "version": "1.0.0",
+      "installedAt": 1778137498841
+    },
+    "self-improving-agent": {
+      "version": "1.0.11",
+      "installedAt": 1778232872391
+    }
+  }
+}
