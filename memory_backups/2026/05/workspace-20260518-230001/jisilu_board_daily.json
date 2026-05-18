@@ -1,0 +1,87 @@
+{
+  "records": [
+    {
+      "date": "2026-05-14",
+      "board_stats": {
+        "other": {
+          "count": 42,
+          "avg_price": 176.02,
+          "avg_premium": 34.37,
+          "avg_turnover": 22.57
+        },
+        "主板(上海)": {
+          "count": 97,
+          "avg_price": 152.83,
+          "avg_premium": 52.05,
+          "avg_turnover": 8.44
+        },
+        "科创板": {
+          "count": 44,
+          "avg_price": 179.77,
+          "avg_premium": 49.37,
+          "avg_turnover": 21.8
+        },
+        "中小板": {
+          "count": 56,
+          "avg_price": 158.38,
+          "avg_premium": 44.89,
+          "avg_turnover": 21.75
+        },
+        "主板(深圳)": {
+          "count": 15,
+          "avg_price": 131.23,
+          "avg_premium": 50.45,
+          "avg_turnover": 8.07
+        },
+        "创业板": {
+          "count": 80,
+          "avg_price": 171.8,
+          "avg_premium": 52.77,
+          "avg_turnover": 30.79
+        }
+      }
+    },
+    {
+      "date": "2026-05-18",
+      "board_stats": {
+        "other": {
+          "count": 8,
+          "avg_price": 152.5,
+          "avg_premium": 0.56,
+          "avg_turnover": 108.78
+        },
+        "中小板": {
+          "count": 5,
+          "avg_price": 145.85,
+          "avg_premium": 1.55,
+          "avg_turnover": 27.43
+        },
+        "创业板": {
+          "count": 6,
+          "avg_price": 176.84,
+          "avg_premium": 1.28,
+          "avg_turnover": 309.21
+        },
+        "主板(上海)": {
+          "count": 3,
+          "avg_price": 164.45,
+          "avg_premium": 2.56,
+          "avg_turnover": 20.95
+        },
+        "主板(深圳)": {
+          "count": 2,
+          "avg_price": 153.3,
+          "avg_premium": 0.23,
+          "avg_turnover": 46.35
+        },
+        "科创板": {
+          "count": 6,
+          "avg_price": 175.51,
+          "avg_premium": 0.53,
+          "avg_turnover": 211.1
+        }
+      }
+    }
+  ],
+  "last_update": "2026-05-18T20:00:23.486399"
+}
