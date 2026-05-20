@@ -1,0 +1,46 @@
+{
+  "records": [
+    {
+      "date": "2026-05-14",
+      "board_stats": {
+        "other": {
+          "count": 42,
+          "avg_price": 176.02,
+          "avg_premium": 34.37,
+          "avg_turnover": 22.57
+        },
+        "主板(上海)": {
+          "count": 97,
+          "avg_price": 152.83,
+          "avg_premium": 52.05,
+          "avg_turnover": 8.44
+        },
+        "科创板": {
+          "count": 44,
+          "avg_price": 179.77,
+          "avg_premium": 49.37,
+          "avg_turnover": 21.8
+        },
+        "中小板": {
+          "count": 56,
+          "avg_price": 158.38,
+          "avg_premium": 44.89,
+          "avg_turnover": 21.75
+        },
+        "主板(深圳)": {
+          "count": 15,
+          "avg_price": 131.23,
+          "avg_premium": 50.45,
+          "avg_turnover": 8.07
+        },
+        "创业板": {
+          "count": 80,
+          "avg_price": 171.8,
+          "avg_premium": 52.77,
+          "avg_turnover": 30.79
+        }
+      }
+    }
+  ],
+  "last_update": "2026-05-14T12:03:14.379766"
+}

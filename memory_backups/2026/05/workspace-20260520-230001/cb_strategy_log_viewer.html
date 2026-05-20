@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>B型不强赎策略推送记录</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#0f1419;color:#e7e9ea;font-size:13px}
+.container{max-width:1600px;margin:0 auto;padding:20px}
+.header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;flex-wrap:wrap;gap:10px}
+.header h1{font-size:20px;font-weight:600;color:#fff}
+.header .stats{color:#71767b;font-size:12px}
+.toolbar{display:flex;gap:10px;margin-bottom:15px;flex-wrap:wrap;align-items:center}
+.toolbar input,.toolbar select{background:#2f3336;border:1px solid #333;color:#e7e9ea;padding:6px 10px;border-radius:6px;font-size:13px}
+.toolbar input{width:160px}
+.toolbar input:focus{outline:none;border-color:#1d9bf0}
+.toolbar label{color:#71767b;font-size:12px;display:flex;align-items:center;gap:5px}
+.toolbar button{background:#2f3336;border:1px solid #333;color:#71767b;padding:6px 12px;border-radius:6px;cursor:pointer;font-size:12px}
+.toolbar button:hover{border-color:#1d9bf0;color:#1d9bf0}
+.badge{display:inline-block;padding:2px 7px;border-radius:4px;font-size:11px;font-weight:500}
+.badge-ok{background:#1a7f37;color:#fff}
+.badge-fail{background:#8b0000;color:#fff}
+.tag{display:inline-block;padding:2px 6px;margin:2px;border-radius:3px;font-size:11px;background:#1a3a5c;color:#60a5fa}
+.tag.top{background:#4a1a2e;color:#f97316}
+#table-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;min-width:1000px}
+th{text-align:left;padding:10px 8px;background:#1a1d21;color:#71767b;font-weight:500;font-size:11px;text-transform:uppercase;border-bottom:1px solid #2f3336;cursor:pointer;user-select:none;white-space:nowrap}
+th:hover{color:#1d9bf0}
+th.sorted{color:#1d9bf0}
+td{padding:8px;border-bottom:1px solid #1a1d21;vertical-align:middle}
+tr:hover td{background:#1c1f23}
+tr.detail-row{display:none}
+tr.detail-row.open td{background:#16181c}
+td.date{white-space:nowrap;color:#71767b;font-size:12px}
+td.time{white-space:nowrap;font-family:Consolas,monospace;color:#60a5fa;font-size:12px}
+td.num{text-align:right;font-family:monospace}
+.bonds-cell{max-width:300px}
+.pager{display:flex;justify-content:center;align-items:center;gap:12px;margin-top:20px}
+.pager button{background:#2f3336;border:none;color:#e7e9ea;padding:8px 18px;border-radius:20px;cursor:pointer;font-size:13px}
+.pager button:hover{background:#1d9bf0}
+.pager button:disabled{opacity:0.4;cursor:not-allowed}
+.pager span{color:#71767b;font-size:12px}
+.nodata{text-align:center;color:#71767b;padding:40px}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="header">
+    <h1>B型不强赎策略推送记录</h1>
+    <span class="stats" id="stats"></span>
+</div>
+
+<div class="toolbar">
+    <label>开始 <input type="date" id="startDate"></label>
+    <label>结束 <input type="date" id="endDate"></label>
+    <label><input type="text" id="search" placeholder="转债名称/代码..."></label>
+    <label>每页
+        <select id="pageSize">
+            <option value="30">30</option>
+            <option value="50">50</option>
+            <option value="100" selected>100</option>
+            <option value="200">200</option>
+        </select>
+    </label>
+    <button onclick="resetFilters()">重置</button>
+    <span id="filterInfo" style="color:#71767b;font-size:12px;margin-left:10px;"></span>
+</div>
+
+<div id="table-wrap">
+<table>
+<thead>
+<tr>
+    <th onclick="sort('date')">日期</th>
+    <th onclick="sort('time')">时间</th>
+    <th onclick="sort('total')">全量</th>
+    <th onclick="sort('final_count')">命中</th>
+    <th>推送标的</th>
+    <th onclick="sort('ding_ok')">状态</th>
+    <th></th>
+</tr>
+</thead>
+<tbody id="tbody"></tbody>
+</table>
+</div>
+
+<div class="pager">
+    <button onclick="prevPage()" id="prevBtn">← 上一页</button>
+    <span id="pageInfo"></span>
+    <button onclick="nextPage()" id="nextBtn">下一页 →</button>
+</div>
+</div>
+
+<script src="cb_records_data.js"></script>
+<script>
+var filtered = [];
+var page = 1;
+var pageSize = 100;
+var sortCol = 'date';
+var sortAsc = false;
+
+function sort(col) {
+    if (sortCol === col) sortAsc = !sortAsc;
+    else { sortCol = col; sortAsc = false; }
+    filtered.sort(function(a, b) {
+        var va = a[col] || '', vb = b[col] || '';
+        if (va < vb) return sortAsc ? -1 : 1;
+        if (va > vb) return sortAsc ? 1 : -1;
+        return a.sort_key.localeCompare(b.sort_key);
+    });
+    page = 1;
+    render();
+}
+
+function applyFilters() {
+    var start = document.getElementById('startDate').value;
+    var end = document.getElementById('endDate').value;
+    var q = document.getElementById('search').value.trim().toLowerCase();
+    
+    filtered = RECORDS.filter(function(r) {
+        if (start && r.date < start) return false;
+        if (end && r.date > end) return false;
+        if (q) {
+            var found = r.hits.some(function(h) {
+                return h.name.toLowerCase().indexOf(q) !== -1 || h.code.indexOf(q) !== -1;
+            });
+            if (!found) return false;
+        }
+        return true;
+    });
+    
+    filtered.sort(function(a, b) {
+        var va = a[sortCol] || '', vb = b[sortCol] || '';
+        if (va < vb) return sortAsc ? -1 : 1;
+        if (va > vb) return sortAsc ? 1 : -1;
+        return a.sort_key.localeCompare(b.sort_key);
+    });
+    
+    page = 1;
+    document.getElementById('filterInfo').textContent = '共 ' + filtered.length + ' 条';
+    render();
+}
+
+function render() {
+    var start = (page - 1) * pageSize;
+    var data = filtered.slice(start, start + pageSize);
+    var tbody = document.getElementById('tbody');
+    
+    if (data.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="7" class="nodata">无匹配记录</td></tr>';
+        document.getElementById('pageInfo').textContent = '';
+        return;
+    }
+    
+    var html = '';
+    for (var i = 0; i < data.length; i++) {
+        var r = data[i];
+        var limitStr = r.limit_count ? ' 取前' + r.limit_count + '只' : '';
+        
+        var hitsHtml = '';
+        for (var j = 0; j < Math.min(r.hits.length, 3); j++) {
+            var h = r.hits[j];
+            var cls = j === 0 ? 'tag top' : 'tag';
+            hitsHtml += '<span class="' + cls + '">' + h.name + '(' + h.code + ') ' + h.count + '/15 ' + h.premium + '%</span>';
+        }
+        
+        var badge = r.ding_ok === '成功' 
+            ? '<span class="badge badge-ok">成功</span>' 
+            : '<span class="badge badge-fail">失败</span>';
+        
+        html += '<tr onclick="toggle(\'' + r.filename + '\')" style="cursor:pointer;">';
+        html += '<td class="date">' + r.date + '</td>';
+        html += '<td class="time">' + r.time + '</td>';
+        html += '<td class="num">' + r.total + '</td>';
+        html += '<td class="num">' + r.final_count + limitStr + '</td>';
+        html += '<td class="bonds-cell">' + (hitsHtml || '<span style="color:#71767b">无命中</span>') + '</td>';
+        html += '<td>' + badge + '</td>';
+        html += '<td><button onclick="event.stopPropagation(); toggle(\'' + r.filename + '\')" style="background:#2f3336;border:none;color:#71767b;padding:3px 8px;border-radius:4px;cursor:pointer;font-size:11px;">详情</button></td>';
+        html += '</tr>';
+        
+        var allHitsHtml = '';
+        for (var k = 0; k < r.hits.length; k++) {
+            var hh = r.hits[k];
+            var cls2 = k === 0 ? 'tag top' : 'tag';
+            allHitsHtml += '<span class="' + cls2 + '">' + hh.name + '转债(' + hh.code + ') ' + hh.count + '/15 溢价' + hh.premium + '%</span>';
+        }
+        
+        var detailRows = '';
+        for (var m = 0; m < r.hits.length; m++) {
+            var hm2 = r.hits[m];
+            detailRows += '<tr style="border-bottom:1px solid #2f3336;">';
+            detailRows += '<td style="padding:5px 8px;color:#71767b;">' + (m+1) + '</td>';
+            detailRows += '<td style="padding:5px 8px;">' + hm2.name + '转债</td>';
+            detailRows += '<td style="padding:5px 8px;font-family:monospace;">' + hm2.code + '</td>';
+            detailRows += '<td style="padding:5px 8px;text-align:center;">' + hm2.count + '/15</td>';
+            detailRows += '<td style="padding:5px 8px;text-align:right;font-family:monospace;">' + hm2.premium + '%</td>';
+            detailRows += '</tr>';
+        }
+        
+        var limitDetail = r.limit_count ? '<div><span style="color:#71767b;font-size:10px;">推送</span> 取前' + r.limit_count + '只</div>' : '';
+        
+        html += '<tr id="row-' + r.filename + '" class="detail-row">';
+        html += '<td colspan="7" style="padding:0;">';
+        html += '<div style="padding:12px 15px;background:#16181c;">';
+        html += '<span style="float:right;cursor:pointer;color:#71767b;font-size:18px;padding:4px;" onclick="toggle(\'' + r.filename + '\')">×</span>';
+        html += '<div style="color:#71767b;font-size:11px;margin-bottom:8px;">' + r.timestamp + ' &nbsp;|&nbsp; ' + r.filename + '</div>';
+        html += '<div style="display:flex;gap:15px;flex-wrap:wrap;margin-bottom:10px;">';
+        html += '<div><span style="color:#71767b;font-size:10px;">钉钉</span> ' + badge + '</div>';
+        html += '<div><span style="color:#71767b;font-size:10px;">全量</span> <span style="font-family:monospace;">' + r.total + '</span></div>';
+        html += '<div><span style="color:#71767b;font-size:10px;">命中</span> <span style="font-family:monospace;">' + r.final_count + '只</span></div>';
+        html += limitDetail;
+        html += '</div>';
+        html += '<div style="margin-bottom:5px;"><span style="color:#71767b;font-size:10px;text-transform:uppercase;">全部命中 (' + r.hits.length + '只)</span></div>';
+        html += '<div style="display:flex;flex-wrap:wrap;gap:3px;margin-bottom:10px;">' + allHitsHtml + '</div>';
+        html += '<div style="overflow-x:auto;">';
+        html += '<table style="width:100%;border-collapse:collapse;font-size:12px;">';
+        html += '<thead><tr style="background:#1a1d21;"><th style="padding:5px 8px;text-align:left;color:#71767b;font-size:10px;">#</th><th style="padding:5px 8px;text-align:left;color:#71767b;font-size:10px;">转债</th><th style="padding:5px 8px;text-align:left;color:#71767b;font-size:10px;">代码</th><th style="padding:5px 8px;text-align:left;color:#71767b;font-size:10px;">计数</th><th style="padding:5px 8px;text-align:left;color:#71767b;font-size:10px;">溢价</th></tr></thead>';
+        html += '<tbody>' + detailRows + '</tbody></table></div></div></td></tr>';
+    }
+    tbody.innerHTML = html;
+    
+    var totalPages = Math.max(1, Math.ceil(filtered.length / pageSize));
+    document.getElementById('pageInfo').textContent = '第 ' + page + ' / ' + totalPages + ' 页，共 ' + filtered.length + ' 条';
+    document.getElementById('prevBtn').disabled = page <= 1;
+    document.getElementById('nextBtn').disabled = page >= totalPages;
+    
+    var ths = document.querySelectorAll('th');
+    for (var t = 0; t < ths.length; t++) ths[t].classList.remove('sorted');
+    var sortTh = document.querySelector('th[onclick="sort(\'' + sortCol + '\')"]');
+    if (sortTh) sortTh.classList.add('sorted');
+}
+
+function toggle(filename) {
+    var row = document.getElementById('row-' + filename);
+    if (row) row.classList.toggle('open');
+}
+
+function prevPage() { if (page > 1) { page--; render(); } }
+function nextPage() { 
+    var totalPages = Math.ceil(filtered.length / pageSize);
+    if (page < totalPages) { page++; render(); }
+}
+
+function resetFilters() {
+    document.getElementById('startDate').value = '';
+    document.getElementById('endDate').value = '';
+    document.getElementById('search').value = '';
+    filtered = RECORDS.slice();
+    sortCol = 'date'; sortAsc = false;
+    page = 1;
+    document.getElementById('filterInfo').textContent = '';
+    render();
+}
+
+document.getElementById('startDate').addEventListener('change', applyFilters);
+document.getElementById('endDate').addEventListener('change', applyFilters);
+document.getElementById('search').addEventListener('input', applyFilters);
+document.getElementById('pageSize').addEventListener('change', function(e) { pageSize = parseInt(e.target.value); page = 1; render(); });
+
+var dateSet = {};
+for (var i = 0; i < RECORDS.length; i++) dateSet[RECORDS[i].date] = true;
+var dates = Object.keys(dateSet).sort();
+document.getElementById('stats').textContent = '共 ' + RECORDS.length + ' 条 | ' + dates.length + ' 个交易日 (' + dates[0] + ' ~ ' + dates[dates.length-1] + ')';
+applyFilters();
+</script>
+</body>
+</html>
