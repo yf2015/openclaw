@@ -1,0 +1,432 @@
+{
+  "version": 1,
+  "updatedAt": "2026-05-28T05:33:47.748Z",
+  "entries": {
+    "memory:memory/2026-04-20.md:1:16": {
+      "key": "memory:memory/2026-04-20.md:1:16",
+      "path": "memory/2026-04-20.md",
+      "startLine": 1,
+      "endLine": 16,
+      "source": "memory",
+      "snippet": "# 2026-04-20 ## 跨设备同步配置 - GitHub 仓库: https://github.com/yf2015/openclaw - 本地克隆: /home/www/openclaw-sync - 同步脚本: /root/.openclaw/workspace/sync_to_github.sh - Token 已写入 git remote.origin.url（下次无需认证） ## 首次同步 - 推送内容: skills/, memory_backups/, AGENTS.md 等完整 workspace - 仓库已有 memory_backups/2026/04/workspace-20260420-184021/ ## 待办 - [ ] 设置 cron 定时同步 - [ ] 确认其他设备可正常 pull",
+      "recallCount": 3,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 3,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-08T08:16:05.991Z",
+      "lastRecalledAt": "2026-05-20T02:33:13.879Z",
+      "queryHashes": [
+        "fe9387f87e6d",
+        "7fcd6f43172b",
+        "38165a488de2"
+      ],
+      "recallDays": [
+        "2026-05-08",
+        "2026-05-19",
+        "2026-05-20"
+      ],
+      "conceptTags": [
+        "backup",
+        "backups",
+        "github.com/yf2015/openclaw",
+        "home/www/openclaw-sync",
+        "remote.origin.url",
+        "memory-backups",
+        "agents.md",
+        "设备"
+      ]
+    },
+    "memory:memory/2026-04-21.md:28:49": {
+      "key": "memory:memory/2026-04-21.md:28:49",
+      "path": "memory/2026-04-21.md",
+      "startLine": 28,
+      "endLine": 49,
+      "source": "memory",
+      "snippet": "- 均换手率: 强赎组59% vs 不强赎48%（p<0.001, ***）— 最强信号 - 最后3天上涨天数: 强赎组1.44天 vs 不强赎1.21天（p<0.001, ***） - 起始价: 强赎组207元 vs 不强赎224元（p<0.001, ***） - 结束价: 强赎组236元 vs 不强赎255元（p<0.001, ***） - 最大单日涨幅: 强赎组8.47% vs 不强赎8.02%（p=0.026, *） ### 4. 技能安装 - skillhub（CLI 2026.3.18）— 已安装 - self-improving — 已安装 - cross-device-sync — 已配置，GitHub仓库 yf2015/openclaw，每小时定时同步 - code-reviewer-pro — 已安装，写代码后自动触发代码审查 - find-skills / skillhub-preference — 已安装 ### 5. 系统配置 - 定时同步 cron: 0 * * * * bash /root/.openclaw/workspace/sync_to_github.sh - systemd service: /etc/systemd/system/toolbox-api.service ## 待办/后续方向 - [ ] 当前市场强赎特征股实时筛选（根据换手率>59%、价格<210等阈值） - [ ] 不强赎样本量偏少（14只），可扩大时间范围 - [ ] 成交额比数据异常（API返回0），考虑用收盘价×成交量估算",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-08T08:16:05.991Z",
+      "lastRecalledAt": "2026-05-08T08:16:05.991Z",
+      "queryHashes": [
+        "fe9387f87e6d"
+      ],
+      "recallDays": [
+        "2026-05-08"
+      ],
+      "conceptTags": [
+        "0.001",
+        "强赎组1.44天",
+        "不强赎1.21天",
+        "强赎组8.47",
+        "不强赎8.02",
+        "0.026",
+        "2026.3.18",
+        "self-improving"
+      ]
+    },
+    "memory:memory/2026-05-08.md:1:34": {
+      "key": "memory:memory/2026-05-08.md:1:34",
+      "path": "memory/2026-05-08.md",
+      "startLine": 1,
+      "endLine": 34,
+      "source": "memory",
+      "snippet": "# 2026-05-08 Daily Memory ## 三省吾身复盘（17:37执行） ### 发现问题 - **日志断档16天**：上次日志4/22，今天5/8，心跳cron在跑但未写日志 - `.learnings/LEARNINGS.md` 不存在，skills未建立此文件 - corrections.md 之前不存在，本次新建 ### 复盘结论 **一省去糟粕：** - 日志断档是最大问题：心跳未写日志=失控 - corrections.md 缺失 → 纠正无法积累 **二省扩核心：** - 用户核心偏好已较完整记录 - 钉钉环境下心跳检查项需重新定义（email/calendar不适用） **三省查漏补缺：** - 复盘流程本身缺少\"日志完整性检查\"步骤 - SOUL.md/AGENTS.md 暂无更新必要 - 建议：daily-memory cron，每天23:30自动生成当日摘要 ### 操作记录 - 新建 corrections.md（教训积累） - 更新 MEMORY.md（添加日志断档教训） - 钉钉推送复盘摘要 ### 当前系统状态（未验证） - 集思录可转债推送：上次日志4/22，之后未知 - toolbox-api /ports：上次日志4/21，之后未知 - skillhub：未检查更新",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-08T09:59:29.769Z",
+      "lastRecalledAt": "2026-05-08T09:59:29.769Z",
+      "queryHashes": [
+        "67d42c07ab8b"
+      ],
+      "recallDays": [
+        "2026-05-08"
+      ],
+      "conceptTags": [
+        "上次日志4/22",
+        "今天5/8",
+        "learnings/learnings.md",
+        "corrections.md",
+        "email/calendar不适用",
+        "soul.md/agents.md",
+        "daily-memory",
+        "memory.md"
+      ]
+    },
+    "memory:memory/2026-04-22.md:47:63": {
+      "key": "memory:memory/2026-04-22.md:47:63",
+      "path": "memory/2026-04-22.md",
+      "startLine": 47,
+      "endLine": 63,
+      "source": "memory",
+      "snippet": "- **手动触发+记忆更新**：用户要求手动触发任务时，触发后立即更新记忆（memory/），不要忘记 - **深刻记住习惯**：用户强调\"深刻记住\"时，必须同步更新 AGENTS.md 或 MEMORY.md，不只是口头回应 - **直接给结论**：用户喜欢直接、务实，不喜欢绕弯子或\"好的我来帮你配置\"这种废话 - **主动全栈工程师思维**：用户说\"你作为全栈工程师，要有觉悟\"，意思是让我主动做事，不需要事事确认 - **GitHub 备份规则**： - 排除：scripts/、*.sh、logs/、memory/、MEMORY.md、.clawhub/、.openclaw/ - 包含：AGENTS.md、SOUL.md、IDENTITY.md、USER.md、TOOLS.md、skills/、jisilu_*.json、state/ - 同步目录：/home/www/openclaw-sync（不是 workspace 本身） - 每次同步前手动 rsync workspace 到 /home/www/openclaw-sync 再 push ## 可转债策略 Cron（2026-04-29更新） - 交易日（周一~周五，1-5）：9:00-16:00 每30分钟执行 - `*/30 9-15 * * 1-5` → 9:00~15:30 - `0 16 * * 1-5` → 16:00 - 集思录公告：`30 8 * * 1-5`（交易日8:30） - GitHub备份：`0 23 * * *`（每天23:00）",
+      "recallCount": 3,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 2.7522489681004907,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-08T09:59:29.769Z",
+      "lastRecalledAt": "2026-05-18T20:02:41.782Z",
+      "queryHashes": [
+        "67d42c07ab8b",
+        "7a1fa36ddcd0",
+        "7fcd6f43172b"
+      ],
+      "recallDays": [
+        "2026-05-08",
+        "2026-05-14",
+        "2026-05-19"
+      ],
+      "conceptTags": [
+        "备份",
+        "agents.md",
+        "memory.md",
+        "soul.md",
+        "identity.md",
+        "user.md",
+        "tools.md",
+        "home/www/openclaw-sync"
+      ]
+    },
+    "memory:memory/2026-04-21.md:1:33": {
+      "key": "memory:memory/2026-04-21.md:1:33",
+      "path": "memory/2026-04-21.md",
+      "startLine": 1,
+      "endLine": 33,
+      "source": "memory",
+      "snippet": "# 2026-04-21 日志 ## 用户信息 - 全栈代码开发工程师 & 项目架构师 - 集思录账号: 17621765877（已登录，cookie已配置） - 集思录Cookie: kbzw__Session / kbzw__user_login 已持久化到脚本 ## 今日主要工作 ### 1. toolbox-api 项目（端口9002） - 路径: /home/www/toolbox-api - 新增页面: /ports — 展示服务器所有监听接口和Docker容器映射 - systemd托管运行（toolbox-api.service） - 技术栈: FastAPI + uvicorn ### 2. 集思录可转债数据获取 - 脚本: /root/.openclaw/workspace/scripts/jisilu_cb.py - 数据持久化: /root/.openclaw/workspace/jisilu_cb_data.json（343只转债） - 指数温度91°（高风险区间） ### 3. 强赎/不强赎K线规律分析 - 脚本: /root/.openclaw/workspace/scripts/jisilu_redeem_analysis.py - 深度分析: /root/.openclaw/workspace/scripts/jisilu_redeem_deep_analysis.py - 数据: /root/.openclaw/workspace/jisilu_redeem_analysis.json - 样本: 强赎71只 / 不强赎14只（近半",
+      "recallCount": 7,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 6.650523438926848,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-08T09:59:29.769Z",
+      "lastRecalledAt": "2026-05-18T20:02:41.782Z",
+      "queryHashes": [
+        "67d42c07ab8b",
+        "2e2f1eba000a",
+        "d6774c9cd652",
+        "7a1fa36ddcd0",
+        "c2fad9b98430",
+        "beb90cb5745b",
+        "7fcd6f43172b"
+      ],
+      "recallDays": [
+        "2026-05-08",
+        "2026-05-14",
+        "2026-05-15",
+        "2026-05-19"
+      ],
+      "conceptTags": [
+        "user-login",
+        "toolbox-api",
+        "home/www/toolbox-api",
+        "toolbox-api.service",
+        "强赎/不强赎k线规律分析",
+        "日志",
+        "用户",
+        "信息"
+      ]
+    },
+    "memory:memory/2026-04-22.md:1:33": {
+      "key": "memory:memory/2026-04-22.md:1:33",
+      "path": "memory/2026-04-22.md",
+      "startLine": 1,
+      "endLine": 33,
+      "source": "memory",
+      "snippet": "# 2026-04-22 Daily Memory ## GitHub Sync - SSH 认证 + Push Protection 问题解决 ### 问题背景 - GitHub 推送报 `GH013: Push cannot contain secrets` - 原因：remote URL 是 `https://ghp_TOKEN@github.com/...`，token 暴露在 URL 中 - VPS 443 端口直连 GitHub 超时，但 api.github.com (443) + SSH 端口 22 均正常 ### 解决过程 1. 生成 SSH key：`ssh-keygen -t ed25519`（路径 `/root/.ssh/id_ed25519`） 2. 测试 SSH： `ssh -T git@github.com` → Permission denied（当时 key 未添加） 3. 发现 SSH 22 端口可用，只是 HTTPS 443 被间歇性阻断 4. 手动改 remote URL 为 SSH 格式后，强推成功：`git push --force` 5. **教训**：强推抹掉了 GitHub 历史，commit `7503bbc` 等被删除 ### 全量备份完成 - 推送了 49 个文件到 GitHub - 成功切换到 SSH 认证（不再暴露 token） - `memory_backups/` 已从 Git 历史永久移除（filter-repo） - `.gitignore` 已配置，`memory_backups/` 不再被 trac",
+      "recallCount": 3,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 3,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-09T04:04:55.233Z",
+      "lastRecalledAt": "2026-05-20T02:33:13.879Z",
+      "queryHashes": [
+        "dc251bd5d7a1",
+        "7a1fa36ddcd0",
+        "38165a488de2"
+      ],
+      "recallDays": [
+        "2026-05-09",
+        "2026-05-14",
+        "2026-05-20"
+      ],
+      "conceptTags": [
+        "backup",
+        "backups",
+        "备份",
+        "ghp-token",
+        "github.com",
+        "api.github.com",
+        "ssh-keygen",
+        "ssh/id-ed25519"
+      ]
+    },
+    "memory:memory/2026-05-19.md:1:7": {
+      "key": "memory:memory/2026-05-19.md:1:7",
+      "path": "memory/2026-05-19.md",
+      "startLine": 1,
+      "endLine": 7,
+      "source": "memory",
+      "snippet": "## 心跳（02:00） **OpenClaw 版本检查** - 当前版本: 2026.5.4 → 最新版本: 2026.5.12 - 钉钉推送: ✅ 已发送（有可用更新） - 状态: 有新版本，用户手动更新",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-18T20:02:41.782Z",
+      "lastRecalledAt": "2026-05-18T20:02:41.782Z",
+      "queryHashes": [
+        "7fcd6f43172b"
+      ],
+      "recallDays": [
+        "2026-05-19"
+      ],
+      "conceptTags": [
+        "2026.5.4",
+        "2026.5.12",
+        "心跳",
+        "openclaw",
+        "版本",
+        "检查",
+        "当前",
+        "最新"
+      ]
+    },
+    "memory:memory/2026-04-22.md:26:49": {
+      "key": "memory:memory/2026-04-22.md:26:49",
+      "path": "memory/2026-04-22.md",
+      "startLine": 26,
+      "endLine": 49,
+      "source": "memory",
+      "snippet": "- `logs/*.log` - 含敏感信息 ### GitHub 当前状态 - 仓库：`git@github.com:yf2015/openclaw.git` - 最新 commit：`bb391c5 Full workspace sync - 2026-04-29 15:03` - 已备份：51个文件（不含scripts、*.sh、logs、memory、MEMORY.md、.clawhub/） - 同步目录：`/home/www/openclaw-sync` ## 可转债策略状态 - 脚本：`/root/.openclaw/workspace/scripts/cb_noredeem_strategy.py` - 钉钉推送正常，今日 14:00 推送成功 - 华兴转债(118003) 14/15 ⚠️ 特别警示已添加 - 同步 cron：1:00, 8:00, 10:30, 12:00, 14:00, 16:00, 22:00 ## 今日关键决策 - 决策：保留 14/15 债券，不程序化排除，改加特别警示文本 - 决策：改用 SSH 认证替代 HTTPS Token URL 方式 - 教训：强推前务必确认目标分支状态，已删除的 commit 无法恢复 ## 用户指挥习惯（深刻记住） - **主动报告状态**：用户会发\"报告状态\"，我需要主动汇报关键进展，不需要每次都等他问 - **手动触发+记忆更新**：用户要求手动触发任务时，触发后立即更新记忆（memory/），不要忘记 - **深刻记住习惯**：用户强调\"深刻记住\"时，必须同步更新 AGENTS.md 或 M",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 2,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-18T20:02:41.782Z",
+      "lastRecalledAt": "2026-05-20T02:33:13.879Z",
+      "queryHashes": [
+        "7fcd6f43172b",
+        "38165a488de2"
+      ],
+      "recallDays": [
+        "2026-05-19",
+        "2026-05-20"
+      ],
+      "conceptTags": [
+        "备份",
+        "github.com",
+        "yf2015/openclaw.git",
+        "memory.md",
+        "home/www/openclaw-sync",
+        "14/15",
+        "agents.md",
+        "logs"
+      ]
+    },
+    "memory:memory/2026-05-20.md:1:31": {
+      "key": "memory:memory/2026-05-20.md:1:31",
+      "path": "memory/2026-05-20.md",
+      "startLine": 1,
+      "endLine": 31,
+      "source": "memory",
+      "snippet": "## 心跳（22:03） ### B型不强赎博弈 V1+V2 并行推送 - **脚本:** `scripts/cb_noredeem_strategy_v2.py` - **执行时间:** 2026-05-20 22:03 - **全量:** 332只 | **命中:** 5只（瑞科、航新、严牌、洁美、艾迪） #### 推送结果 - **V1 top2:** 严牌转债(11/15), 瑞科转债(10/15) - **V2 top2:** 瑞科转债(91.0分), 航新转债(69.4分) - **钉钉 errcode:** 0 ✅ #### V1/V2 排序差异说明 | 差异 | V1倾向 | V2倾向 | |---|---|---| | 排序依据 | X/Y计数降序 | 综合评分（负溢价+超触发+小规模） | | 第1名 | 严牌转债（风险11/15，溢价1.01%） | 瑞科转债（负溢价-3.28%，V2评分91） | | 第2名 | 瑞科转债（风险10/15，负溢价-3.28%） | 航新转债（规模1.67亿最优） | **核心分歧：** V1更关注计数和风险等级（严牌），V2更关注负溢价和评分（瑞科）。两者共同推荐关注瑞科转债。 #### 备注 - 严牌转债现价266.5元（高价债），溢价1.01%，正股超触发102.9%（超高分触发） - 瑞科转债现价171.88元，负溢价-3.28%，超触发36.7% - 航新转债规模1.67亿（最小），BBB评级 ## 心跳（22:30） ### 集思录增量采集 - Step=2, Phase=list, Slice1完成",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-28T05:33:47.748Z",
+      "lastRecalledAt": "2026-05-28T05:33:47.748Z",
+      "queryHashes": [
+        "995492e565b9"
+      ],
+      "recallDays": [
+        "2026-05-28"
+      ],
+      "conceptTags": [
+        "11/15",
+        "10/15",
+        "91.0分",
+        "69.4分",
+        "v1/v2",
+        "x/y计数降序",
+        "风险11/15",
+        "溢价1.01"
+      ]
+    },
+    "memory:memory/2026-05-26.md:43:66": {
+      "key": "memory:memory/2026-05-26.md:43:66",
+      "path": "memory/2026-05-26.md",
+      "startLine": 43,
+      "endLine": 66,
+      "source": "memory",
+      "snippet": "- 排序差异: V1按X/Y计数降序(偏好13/15高风险计数瑞科); V2偏好京源(高评分72.8,负溢价+计数得分高)优先于贵燃(评分51.1,ROE正向但风险等级低) ## 心跳（14:35） ### B型不强赎博弈 V1+V2 定时推送 - 脚本：`scripts/cb_noredeem_strategy_v2.py` - 全量：327只，命中：2只（京源转债、瑞科转债） - 钉钉推送：✅ errcode=0 - V1 top1：瑞科转债；V2 top1：京源转债 - 差异原因：V1偏X/Y计数（瑞科13/15>京源11/15），V2偏负溢价+规模（京源溢价0.61%+规模1.68亿更优） ## 心跳（15:05） - 检查项：cron B型不强赎博弈 V1+V2 推送 ✅ - 推送结果： - **V1 top3:** 瑞科转债(118018), 京源转债(118016) - **V2 top3:** 京源转债(118016), 瑞科转债(118018) - **排序差异说明：** V1按X/Y计数降序→瑞科优先（溢价-0.29%优但风险等级13/15高）；V2综合评分→京源优先（评分72.8>61.0，计数得分25>10但溢价0.76%劣于瑞科） - 钉钉 errcode: 0 ✅ ## Cron（15:35）B型不强赎博弈 V1+V2 并行推送 - 脚本执行: ✅ cb_noredeem_strategy_v2.py - 钉钉推送: ✅ errcode=0 - 全量/命中: 327只 → 2只命中（京源转债、瑞科转债） - V1 top2: 瑞",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-28T05:33:47.748Z",
+      "lastRecalledAt": "2026-05-28T05:33:47.748Z",
+      "queryHashes": [
+        "995492e565b9"
+      ],
+      "recallDays": [
+        "2026-05-28"
+      ],
+      "conceptTags": [
+        "v1按x/y计数降序",
+        "偏好13/15高风险计数瑞科",
+        "高评分72.8",
+        "评分51.1",
+        "v1偏x/y计数",
+        "瑞科13/15",
+        "京源11/15",
+        "京源溢价0.61"
+      ]
+    },
+    "memory:memory/2026-05-27.md:79:97": {
+      "key": "memory:memory/2026-05-27.md:79:97",
+      "path": "memory/2026-05-27.md",
+      "startLine": 79,
+      "endLine": 97,
+      "source": "memory",
+      "snippet": "3. **删除corrections.md重复条目**：与LEARNINGS.md重复，精简移除 ### 二省扩核心 1. **增量采集多批次触发已自洽**：5/27跑了5个批次（15:30/17:00/19:00/21:32/22:03），状态持久化有效 2. **钉钉errcode=300005反复出现**：5/26+5/27连续出现，webhook token可能过期 3. **策略命中率有下降趋势**：5/25~5/27从3~4只/日降到1~2只/日，注意观察 ### 三省查漏补缺 1. **钉钉webhook token状态**：检查token是否有效（300005=token不存在） 2. **策略命中率无趋势记录**：建议复盘加「信号质量」维度 3. **jisilu增量采集跨日持久化确认**：5/25→5/26跨日衔接成功，机制已验证 ### 本次永久关闭 - OpenClaw版本升级 → 按需处理，不挂待确认 - V1+V2共振量化方案 → 已固化，无需追踪 ### 本次新增待确认 - 钉钉webhook token有效性：errcode=300005连续出现需排查",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-28T05:33:47.748Z",
+      "lastRecalledAt": "2026-05-28T05:33:47.748Z",
+      "queryHashes": [
+        "995492e565b9"
+      ],
+      "recallDays": [
+        "2026-05-28"
+      ],
+      "conceptTags": [
+        "删除corrections.md重复条目",
+        "与learnings.md重复",
+        "5/27跑了5个批次",
+        "30/17",
+        "00/19",
+        "00/21",
+        "32/22",
+        "5/26"
+      ]
+    },
+    "memory:memory/2026-05-27.md:53:83": {
+      "key": "memory:memory/2026-05-27.md:53:83",
+      "path": "memory/2026-05-27.md",
+      "startLine": 53,
+      "endLine": 83,
+      "source": "memory",
+      "snippet": "- **钉钉推送**：✅ 完成（脚本内 errcode=0 校验通过） - **执行时间**：2026-05-27 16:05 ## 心跳（17:00） - 检查项：集思录可转债增量采集 ✅ - 进度：执行 Slice5，写库35条 - 当前进度：step=6, slices[0-4]完成，[5-9]待执行 - 钉钉通知：未发送（全部10批次尚未完成） ## 心跳（19:00） - 集思录增量采集：Slice9完成，写库35条 - 钉钉通知失败（token不存在），已记录 - 进度：10批次中9批完成，下批次(Slice10)下次继续 ## 心跳（21:32） - 检查项：集思录增量采集 ✅ - 执行 Slice3，写库35条，当前进度4/10 ## 心跳（22:03） - 集思录可转债增量采集：✅ 完成 - 本次执行：slice 4-10（6批），累计写入 332条 - 钉钉通知：❌ token失效（errcode 300005） ## 三省吾身（20:00 UTC+8） ### 一省去糟粕 1. **删除「OpenClaw版本待升级」**：已在5/27标记为用户按需，连续挂起无进展，正式关闭 2. **删除「V1+V2共振量化方案」**：已固化在LEARNINGS.md，不再追踪 3. **删除corrections.md重复条目**：与LEARNINGS.md重复，精简移除 ### 二省扩核心 1. **增量采集多批次触发已自洽**：5/27跑了5个批次（15:30/17:00/19:00/21:32/22:03），状态持久化有效 2. **钉钉errcode=",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-28T05:33:47.748Z",
+      "lastRecalledAt": "2026-05-28T05:33:47.748Z",
+      "queryHashes": [
+        "995492e565b9"
+      ],
+      "recallDays": [
+        "2026-05-28"
+      ],
+      "conceptTags": [
+        "0-4",
+        "5-9",
+        "当前进度4/10",
+        "4-10",
+        "已在5/27标记为用户按需",
+        "已固化在learnings.md",
+        "删除corrections.md重复条目",
+        "与learnings.md重复"
+      ]
+    },
+    "memory:memory/2026-05-21.md:1:32": {
+      "key": "memory:memory/2026-05-21.md:1:32",
+      "path": "memory/2026-05-21.md",
+      "startLine": 1,
+      "endLine": 32,
+      "source": "memory",
+      "snippet": "## 心跳（10:03） - 检查项：cron B型不强赎博弈 V1+V2 并行推送 ✅ - 推送结果：errcode=0 **策略执行结果：** - 全量：332只，命中：4只 - V1 top2：严牌转债（11/15）、瑞科转债（10/15） - V2 top2：瑞科转债（84.4分）、洁美转债（58.7分） - 排序差异：V1重计数和超触发，V2重负溢价+评分体系，两者侧重点不同导致排名差异 **推送记录：** - 时间：2026-05-21 10:04 - webhook：oapi.dingtalk.com（82229bd3...） - 推送结果：errcode=0, errmsg=ok ✅ ## 心跳（11:30） - 检查项：集思录增量采集 ✅ - 异常：无 - 结果：Slice7完成，写库35条。当前进度：step=8, slices[0-6]=true, slices[7-9]=false ## Cron（12:04）B型不强赎博弈 V1+V2 并行推送 - 全量：332只，命中：3只 - V1 top2：严牌转债、瑞科转债 - V2 top2：瑞科转债、严牌转债 - 排序差异：V1重X/Y计数降序，V2重综合评分（负溢价+黄金计数+超触发+小规模） - 瑞科转债V2评分87.5排第1（负溢价-1.6%最优），严牌转债V2评分66.8排第2（正股ROE更优但超触发108%过高） - 艾迪转债V1第3，V2第3（溢价0.81%，评分58.1） - 推送：errcode=0, errmsg=ok ✅ ## 心跳（13:30） - 集思录增量采集：St",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-28T05:33:47.748Z",
+      "lastRecalledAt": "2026-05-28T05:33:47.748Z",
+      "queryHashes": [
+        "995492e565b9"
+      ],
+      "recallDays": [
+        "2026-05-28"
+      ],
+      "conceptTags": [
+        "11/15",
+        "10/15",
+        "84.4分",
+        "58.7分",
+        "oapi.dingtalk.com",
+        "0-6",
+        "7-9",
+        "v1重x/y计数降序"
+      ]
+    }
+  }
+}
