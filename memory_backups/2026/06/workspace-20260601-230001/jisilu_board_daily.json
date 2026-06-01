@@ -1,0 +1,497 @@
+{
+  "records": [
+    {
+      "date": "2026-05-14",
+      "board_stats": {
+        "other": {
+          "count": 42,
+          "avg_price": 176.02,
+          "avg_premium": 34.37,
+          "avg_turnover": 22.57
+        },
+        "主板(上海)": {
+          "count": 97,
+          "avg_price": 152.83,
+          "avg_premium": 52.05,
+          "avg_turnover": 8.44
+        },
+        "科创板": {
+          "count": 44,
+          "avg_price": 179.77,
+          "avg_premium": 49.37,
+          "avg_turnover": 21.8
+        },
+        "中小板": {
+          "count": 56,
+          "avg_price": 158.38,
+          "avg_premium": 44.89,
+          "avg_turnover": 21.75
+        },
+        "主板(深圳)": {
+          "count": 15,
+          "avg_price": 131.23,
+          "avg_premium": 50.45,
+          "avg_turnover": 8.07
+        },
+        "创业板": {
+          "count": 80,
+          "avg_price": 171.8,
+          "avg_premium": 52.77,
+          "avg_turnover": 30.79
+        }
+      }
+    },
+    {
+      "date": "2026-05-18",
+      "board_stats": {
+        "other": {
+          "count": 8,
+          "avg_price": 152.5,
+          "avg_premium": 0.56,
+          "avg_turnover": 108.78
+        },
+        "中小板": {
+          "count": 5,
+          "avg_price": 145.85,
+          "avg_premium": 1.55,
+          "avg_turnover": 27.43
+        },
+        "创业板": {
+          "count": 6,
+          "avg_price": 176.84,
+          "avg_premium": 1.28,
+          "avg_turnover": 309.21
+        },
+        "主板(上海)": {
+          "count": 3,
+          "avg_price": 164.45,
+          "avg_premium": 2.56,
+          "avg_turnover": 20.95
+        },
+        "主板(深圳)": {
+          "count": 2,
+          "avg_price": 153.3,
+          "avg_premium": 0.23,
+          "avg_turnover": 46.35
+        },
+        "科创板": {
+          "count": 6,
+          "avg_price": 175.51,
+          "avg_premium": 0.53,
+          "avg_turnover": 211.1
+        }
+      }
+    },
+    {
+      "date": "2026-05-19",
+      "board_stats": {
+        "other": {
+          "count": 8,
+          "avg_price": 156.07,
+          "avg_premium": 1.39,
+          "avg_turnover": 156.65
+        },
+        "中小板": {
+          "count": 4,
+          "avg_price": 150.44,
+          "avg_premium": 1.82,
+          "avg_turnover": 46.73
+        },
+        "主板(上海)": {
+          "count": 5,
+          "avg_price": 217.8,
+          "avg_premium": 3.49,
+          "avg_turnover": 75.47
+        },
+        "创业板": {
+          "count": 6,
+          "avg_price": 184.57,
+          "avg_premium": 1.21,
+          "avg_turnover": 273.35
+        },
+        "主板(深圳)": {
+          "count": 2,
+          "avg_price": 154.74,
+          "avg_premium": 1.17,
+          "avg_turnover": 51.99
+        },
+        "科创板": {
+          "count": 5,
+          "avg_price": 178.54,
+          "avg_premium": 1.96,
+          "avg_turnover": 124.77
+        }
+      }
+    },
+    {
+      "date": "2026-05-20",
+      "board_stats": {
+        "中小板": {
+          "count": 4,
+          "avg_price": 150.22,
+          "avg_premium": 1.41,
+          "avg_turnover": 28.95
+        },
+        "other": {
+          "count": 7,
+          "avg_price": 166.55,
+          "avg_premium": 0.76,
+          "avg_turnover": 87.16
+        },
+        "主板(深圳)": {
+          "count": 2,
+          "avg_price": 151.76,
+          "avg_premium": 0.46,
+          "avg_turnover": 46.01
+        },
+        "主板(上海)": {
+          "count": 6,
+          "avg_price": 205.31,
+          "avg_premium": 1.59,
+          "avg_turnover": 49.15
+        },
+        "创业板": {
+          "count": 6,
+          "avg_price": 183.65,
+          "avg_premium": 0.69,
+          "avg_turnover": 315.96
+        },
+        "科创板": {
+          "count": 5,
+          "avg_price": 184.66,
+          "avg_premium": -0.11,
+          "avg_turnover": 269.5
+        }
+      }
+    },
+    {
+      "date": "2026-05-21",
+      "board_stats": {
+        "other": {
+          "count": 9,
+          "avg_price": 172.27,
+          "avg_premium": 1.37,
+          "avg_turnover": 211.86
+        },
+        "主板(上海)": {
+          "count": 5,
+          "avg_price": 211.67,
+          "avg_premium": 2.74,
+          "avg_turnover": 44.36
+        },
+        "中小板": {
+          "count": 3,
+          "avg_price": 158.13,
+          "avg_premium": 2.06,
+          "avg_turnover": 33.97
+        },
+        "主板(深圳)": {
+          "count": 2,
+          "avg_price": 143.54,
+          "avg_premium": 1.36,
+          "avg_turnover": 58.03
+        },
+        "创业板": {
+          "count": 7,
+          "avg_price": 222.91,
+          "avg_premium": 1.4,
+          "avg_turnover": 293.25
+        },
+        "科创板": {
+          "count": 4,
+          "avg_price": 177.31,
+          "avg_premium": 1.28,
+          "avg_turnover": 366.04
+        }
+      }
+    },
+    {
+      "date": "2026-05-22",
+      "board_stats": {
+        "other": {
+          "count": 8,
+          "avg_price": 181.11,
+          "avg_premium": -2.48,
+          "avg_turnover": 226.08
+        },
+        "中小板": {
+          "count": 3,
+          "avg_price": 132.42,
+          "avg_premium": 2.04,
+          "avg_turnover": 38.05
+        },
+        "主板(深圳)": {
+          "count": 2,
+          "avg_price": 151.59,
+          "avg_premium": -0.79,
+          "avg_turnover": 138.92
+        },
+        "主板(上海)": {
+          "count": 5,
+          "avg_price": 219.72,
+          "avg_premium": 1.31,
+          "avg_turnover": 32.38
+        },
+        "创业板": {
+          "count": 7,
+          "avg_price": 217.86,
+          "avg_premium": 0.75,
+          "avg_turnover": 568.51
+        },
+        "科创板": {
+          "count": 5,
+          "avg_price": 185.33,
+          "avg_premium": 0.14,
+          "avg_turnover": 209.11
+        }
+      }
+    },
+    {
+      "date": "2026-05-25",
+      "board_stats": {
+        "other": {
+          "count": 6,
+          "avg_price": 125.6,
+          "avg_premium": -2.45,
+          "avg_turnover": 155.44
+        },
+        "中小板": {
+          "count": 5,
+          "avg_price": 155.22,
+          "avg_premium": 1.86,
+          "avg_turnover": 105.36
+        },
+        "主板(深圳)": {
+          "count": 2,
+          "avg_price": 150.43,
+          "avg_premium": -1.17,
+          "avg_turnover": 114.49
+        },
+        "主板(上海)": {
+          "count": 5,
+          "avg_price": 218.61,
+          "avg_premium": 1.45,
+          "avg_turnover": 19.53
+        },
+        "科创板": {
+          "count": 5,
+          "avg_price": 191.06,
+          "avg_premium": 0.12,
+          "avg_turnover": 226.08
+        },
+        "创业板": {
+          "count": 7,
+          "avg_price": 189.45,
+          "avg_premium": 0.3,
+          "avg_turnover": 318.27
+        }
+      }
+    },
+    {
+      "date": "2026-05-26",
+      "board_stats": {
+        "other": {
+          "count": 6,
+          "avg_price": 152.87,
+          "avg_premium": -1.52,
+          "avg_turnover": 66.89
+        },
+        "中小板": {
+          "count": 6,
+          "avg_price": 153.85,
+          "avg_premium": 2.98,
+          "avg_turnover": 26.33
+        },
+        "主板(上海)": {
+          "count": 5,
+          "avg_price": 216.69,
+          "avg_premium": 0.55,
+          "avg_turnover": 31.97
+        },
+        "主板(深圳)": {
+          "count": 1,
+          "avg_price": 139.67,
+          "avg_premium": -0.49,
+          "avg_turnover": 79.65
+        },
+        "创业板": {
+          "count": 6,
+          "avg_price": 227.36,
+          "avg_premium": 0.94,
+          "avg_turnover": 161.15
+        },
+        "科创板": {
+          "count": 6,
+          "avg_price": 184.03,
+          "avg_premium": 0.32,
+          "avg_turnover": 169.21
+        }
+      }
+    },
+    {
+      "date": "2026-05-27",
+      "board_stats": {
+        "other": {
+          "count": 8,
+          "avg_price": 202.73,
+          "avg_premium": -0.97,
+          "avg_turnover": 699.84
+        },
+        "中小板": {
+          "count": 5,
+          "avg_price": 155.44,
+          "avg_premium": 2.29,
+          "avg_turnover": 30.99
+        },
+        "主板(上海)": {
+          "count": 6,
+          "avg_price": 208.18,
+          "avg_premium": 1.84,
+          "avg_turnover": 27.57
+        },
+        "主板(深圳)": {
+          "count": 1,
+          "avg_price": 135.0,
+          "avg_premium": -0.2,
+          "avg_turnover": 51.38
+        },
+        "科创板": {
+          "count": 5,
+          "avg_price": 188.37,
+          "avg_premium": 0.8,
+          "avg_turnover": 247.77
+        },
+        "创业板": {
+          "count": 5,
+          "avg_price": 238.39,
+          "avg_premium": 1.25,
+          "avg_turnover": 216.32
+        }
+      }
+    },
+    {
+      "date": "2026-05-28",
+      "board_stats": {
+        "other": {
+          "count": 8,
+          "avg_price": 220.71,
+          "avg_premium": 0.28,
+          "avg_turnover": 208.26
+        },
+        "创业板": {
+          "count": 6,
+          "avg_price": 218.79,
+          "avg_premium": 0.63,
+          "avg_turnover": 274.44
+        },
+        "主板(上海)": {
+          "count": 5,
+          "avg_price": 211.29,
+          "avg_premium": 2.57,
+          "avg_turnover": 27.46
+        },
+        "中小板": {
+          "count": 4,
+          "avg_price": 129.34,
+          "avg_premium": 3.41,
+          "avg_turnover": 27.32
+        },
+        "科创板": {
+          "count": 6,
+          "avg_price": 177.76,
+          "avg_premium": 1.23,
+          "avg_turnover": 154.69
+        },
+        "主板(深圳)": {
+          "count": 1,
+          "avg_price": 139.7,
+          "avg_premium": -1.22,
+          "avg_turnover": 78.85
+        }
+      }
+    },
+    {
+      "date": "2026-05-29",
+      "board_stats": {
+        "other": {
+          "count": 7,
+          "avg_price": 163.92,
+          "avg_premium": 0.13,
+          "avg_turnover": 75.61
+        },
+        "创业板": {
+          "count": 6,
+          "avg_price": 190.14,
+          "avg_premium": 1.24,
+          "avg_turnover": 88.7
+        },
+        "主板(上海)": {
+          "count": 6,
+          "avg_price": 191.54,
+          "avg_premium": 2.26,
+          "avg_turnover": 16.89
+        },
+        "中小板": {
+          "count": 4,
+          "avg_price": 157.0,
+          "avg_premium": 1.13,
+          "avg_turnover": 89.34
+        },
+        "科创板": {
+          "count": 6,
+          "avg_price": 173.82,
+          "avg_premium": 1.86,
+          "avg_turnover": 162.2
+        },
+        "主板(深圳)": {
+          "count": 1,
+          "avg_price": 134.93,
+          "avg_premium": -0.25,
+          "avg_turnover": 64.51
+        }
+      }
+    },
+    {
+      "date": "2026-06-01",
+      "board_stats": {
+        "other": {
+          "count": 7,
+          "avg_price": 219.94,
+          "avg_premium": -0.38,
+          "avg_turnover": 77.83
+        },
+        "创业板": {
+          "count": 7,
+          "avg_price": 189.99,
+          "avg_premium": 2.53,
+          "avg_turnover": 115.36
+        },
+        "主板(上海)": {
+          "count": 6,
+          "avg_price": 189.91,
+          "avg_premium": 2.67,
+          "avg_turnover": 21.36
+        },
+        "中小板": {
+          "count": 4,
+          "avg_price": 161.28,
+          "avg_premium": 0.64,
+          "avg_turnover": 96.09
+        },
+        "科创板": {
+          "count": 5,
+          "avg_price": 172.4,
+          "avg_premium": 1.17,
+          "avg_turnover": 340.08
+        },
+        "主板(深圳)": {
+          "count": 1,
+          "avg_price": 132.0,
+          "avg_premium": -0.27,
+          "avg_turnover": 103.73
+        }
+      }
+    }
+  ],
+  "last_update": "2026-06-01T20:00:23.235169"
+}
